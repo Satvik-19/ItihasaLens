@@ -1,0 +1,51 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environments
+venv/
+venv_new/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Data and model files
+*.h5
+*.hdf5
+*.ckpt
+*.pth
+*.pt
+*.pkl
+*.joblib
+*.npz
+*.npy
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.db
+*.sqlite3
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Test and result folders
+/test_results/
+/damage_results/
+
+# Environment variables
+.env
+
+# VSCode settings
+.vscode/
+
+# Logs
+*.log
+
+# Ignore large files
+my_combined_model.h5 
