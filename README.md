@@ -83,7 +83,20 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-4. Run the application:
+4. Download model files:
+```bash
+python src/download_models.py
+```
+Note: If automatic download fails, you can download the models manually from:
+- [Google Drive Link](https://drive.google.com/drive/folders/1qjKKhYTsAtPscq_lEcBk3HG1GcENw1e_?usp=sharing)
+
+The following models are required:
+- Monument Recognition Model (`monument_recognition_model.h5`)
+- Damage Detection Model (`damage_detection_model.h5`)
+
+Place the downloaded models in the `models/` directory.
+
+5. Run the application:
 ```bash
 streamlit run src/visualization/app.py
 ```
@@ -144,7 +157,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📧 Contact
 
 For questions and support, please open an issue in the GitHub repository or contact the maintainers.
-
----
-
-Made with ❤️ for Indian Heritage Preservation 

@@ -35,4 +35,14 @@ lxml==4.9.3
 # Development
 pytest==7.3.0
 black==23.3.0
-flake8==6.0.0 
+flake8==6.0.0
+
+# Model downloading
+gdown>=4.4.0
+tqdm>=4.61.0
+requests>=2.25.1
+
+# Development dependencies
+pytest>=6.2.5
+black>=21.5b2
+flake8>=3.9.2 
