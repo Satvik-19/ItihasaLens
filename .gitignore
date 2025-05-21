@@ -1,19 +1,84 @@
-# Byte-compiled / optimized / DLL files
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
-
-# C extensions
 *.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
-# Virtual environments
+# Virtual Environment
 venv/
 venv_new/
+ENV/
+env/
+.env/
 
-# Jupyter Notebook checkpoints
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Jupyter Notebook
 .ipynb_checkpoints
+*.ipynb_checkpoints/
 
-# Data and model files
+# Model files
+models/*.h5
+models/*.pkl
+models/*.pt
+models/*.pth
+models/*.onnx
+
+# Data files
+data/
+test_results/
+damage_results/
+*.csv
+*.json
+*.xml
+*.txt
+!requirements.txt
+!README.md
+
+# Logs
+*.log
+logs/
+training_log_*.csv
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Large files
+*.h5
+*.pkl
+*.pt
+*.pth
+*.onnx
+*.bin
+*.dat
+*.npy
+*.npz
+
+# C extensions
 *.h5
 *.hdf5
 *.ckpt
@@ -31,21 +96,10 @@ venv_new/
 *.sqlite3
 
 # System files
-.DS_Store
 Thumbs.db
-
-# Test and result folders
-/test_results/
-/damage_results/
-
-# Environment variables
-.env
 
 # VSCode settings
 .vscode/
 
-# Logs
-*.log
-
-# Ignore large files
-my_combined_model.h5 
+# Environment variables
+.env 
