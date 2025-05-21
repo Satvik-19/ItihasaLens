@@ -69,6 +69,7 @@ tmp/
 
 # Large files
 *.h5
+*.hdf5
 *.pkl
 *.pt
 *.pth
@@ -77,18 +78,8 @@ tmp/
 *.dat
 *.npy
 *.npz
-
-# C extensions
-*.h5
-*.hdf5
 *.ckpt
-*.pth
-*.pt
-*.pkl
 *.joblib
-*.npz
-*.npy
-*.csv
 *.tsv
 *.xlsx
 *.xls
@@ -97,9 +88,6 @@ tmp/
 
 # System files
 Thumbs.db
-
-# VSCode settings
-.vscode/
 
 # Environment variables
 .env 
