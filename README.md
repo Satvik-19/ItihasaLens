@@ -1,159 +1,208 @@
-# ItihāsaLens: Heritage Monument Analysis System 🏛️
+# 🏛️ ItihāsaLens: Heritage Monument Analysis & Preservation System
 
-ItihāsaLens is an advanced AI-powered system for analyzing and preserving Indian heritage monuments. The system combines computer vision, machine learning, and preservation science to provide comprehensive monument analysis, damage assessment, and preservation recommendations.
+**ItihāsaLens** is an AI-powered heritage conservation system designed to assist in the digital preservation of Indian monuments. It integrates computer vision, deep learning, and domain knowledge in archaeology to recognize monuments, detect damage, analyze materials, and recommend conservation actions through a user-friendly web interface.
 
-## 🌟 Features
+---
 
-- **Monument Recognition**: Identifies and classifies Indian heritage monuments using deep learning
-- **Damage Analysis**: Detects and analyzes structural damage using computer vision
-- **Material Analysis**: Identifies construction materials and their characteristics
-- **Preservation Planning**: Generates detailed treatment plans and preventive measures
-- **Environmental Context**: Provides location-specific environmental analysis
-- **Monitoring Schedule**: Creates customized monitoring and maintenance schedules
+## 🌟 Key Features
+
+### 🏷️ Monument Recognition
+
+* Identifies Indian heritage monuments using a custom-trained convolutional neural network (CNN).
+* Supports diverse architectural styles with real-time prediction and confidence scores.
+
+### 🧱 Damage Detection
+
+* Detects and categorizes structural and surface damage using a YOLO-based object detection model.
+* Damage types include:
+
+  * Cracks
+  * Erosion
+  * Discoloration
+  * Structural damage
+  * Biological growth
+* Provides damage metrics, heatmaps, and severity assessment.
+
+### 🪨 Material Analysis
+
+* Recognizes monument construction materials using a ResNet-based CNN model.
+* Offers details on material properties, historical usage, and conservation techniques.
+
+### 🤖 AI-Powered Analysis
+
+* Uses language models (OpenAI GPT and BART CNN) for:
+
+  * Historical significance insights
+  * Architectural style interpretation
+  * Preservation strategies
+  * Environmental impact estimation
+  * Step-by-step treatment planning
+
+### 🛡️ Preservation Advisor
+
+* Recommends practical and historical preservation methods.
+* Includes:
+
+  * Priority-based actions
+  * Time and cost estimates
+  * Similar case references
+  * Monitoring schedules
+
+---
 
 ## 🛠️ Tech Stack
 
 ### Core Technologies
-- **Python 3.8+**: Primary programming language
-- **Streamlit**: Web interface and visualization
-- **OpenCV**: Image processing and computer vision
-- **TensorFlow/Keras**: Deep learning models
-- **NumPy**: Numerical computations
-- **Pillow**: Image handling
 
-### Machine Learning Models
-- **Monument Recognition Model**: Custom CNN for monument classification
-- **Damage Detection Model**: YOLO-based object detection for damage identification
-- **Material Analysis Model**: CNN for material classification
+* Python 3.8+
+* Streamlit (Web Interface)
+* TensorFlow / Keras
+* OpenCV & scikit-image
+* NumPy & Pillow
 
-### Architecture Components
-1. **Frontend**
-   - Streamlit-based web interface
-   - Interactive visualizations
-   - Real-time analysis display
+### AI/ML Components
 
-2. **Backend**
-   - Model inference pipeline
-   - Image processing system
-   - Preservation recommendation engine
+* Custom CNN (Monument Recognition)
+* YOLO-based Object Detection (Damage Detection)
+* ResNet-based CNN (Material Analysis)
+* OpenAI GPT & BART-Large CNN (AI Summaries)
 
-3. **Data Processing**
-   - Image preprocessing
-   - Feature extraction
-   - Damage quantification
+### APIs & Services
+
+* OpenAI API
+* OpenRouter API (fallback for open-access LLMs)
+
+---
+🧠 Architecture Overview
+
+![image](https://github.com/user-attachments/assets/74a09606-2e0b-4987-9bfc-2f551dff4e83)
+
+Visual representation of the system workflow and technologies integrated into ItihāsaLens.
+
+---
 
 ## 📁 Project Structure
 
 ```
 ItihasaLens/
 ├── src/
-│   ├── recognition/     # Monument recognition models
-│   ├── damage/         # Damage detection system
-│   ├── preservation/   # Preservation analysis
-│   └── visualization/  # Streamlit interface
-├── models/             # Trained ML models
-├── data/              # Training and test data
-├── tests/             # Unit tests
-└── requirements.txt   # Project dependencies
+│   ├── recognition/        # Monument classification logic
+│   ├── damage/             # Damage detection models and utilities
+│   ├── material/           # Material analysis components
+│   ├── preservation/       # AI summary generation & preservation logic
+│   └── visualization/      # Streamlit-based frontend
+├── models/                 # Pretrained and fine-tuned model files
+├── data/                   # Processed data and testing samples
+├── tests/                  # Unit and integration tests
+└── requirements.txt        # Python dependencies
 ```
+
+---
 
 ## 🚀 Getting Started
 
-### Prerequisites
-- Python 3.8 or higher
-- pip (Python package manager)
-- Virtual environment (recommended)
+### ✅ Prerequisites
 
-### Installation
+* Python 3.8 or higher
+* `pip` (Python package manager)
+* Git
+* (Recommended) Virtual environment tool: `venv` or `conda`
 
-1. Clone the repository:
+### 📦 Installation
+
 ```bash
-git clone https://github.com/yourusername/ItihasaLens.git
-cd ItihasaLens
-```
-
-2. Create and activate virtual environment:
-```bash
+git clone https://github.com/yourusername/itihasalens.git
+cd itihasalens
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-3. Install dependencies:
-```bash
+source venv/bin/activate       # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-4. Download model files:
+### 🔐 Configure Environment Variables
+
 ```bash
-python src/download_models.py
+cp .env.example .env
+# Edit .env to add your API keys (OpenAI, OpenRouter, etc.)
 ```
-Note: If automatic download fails, you can download the models manually from:
-- [Google Drive Link](https://drive.google.com/drive/folders/1qjKKhYTsAtPscq_lEcBk3HG1GcENw1e_?usp=sharing)
 
-The following models are required:
-- Monument Recognition Model (`monument_recognition_model.h5`)
-- Damage Detection Model (`damage_detection_model.h5`)
+---
 
-Place the downloaded models in the `models/` directory.
+## 💻 Running the Application
 
-5. Run the application:
+To launch the app:
+
 ```bash
 streamlit run src/visualization/app.py
 ```
 
-## 💻 Usage
+Once running:
 
-1. Launch the application using the command above
-2. Upload an image of an Indian heritage monument
-3. The system will automatically:
-   - Identify the monument
-   - Analyze structural damage
-   - Detect construction materials
-   - Generate preservation recommendations
-   - Create monitoring schedules
+1. Upload an image of a monument.
+2. The system will automatically analyze and display:
 
-## 🔧 Model Training
+   * Monument identification
+   * Damage overlays and metrics
+   * Material classification
+   * AI-generated preservation insights
 
-### Monument Recognition Model
-- Architecture: Custom CNN
-- Dataset: Indian Heritage Monuments Dataset
-- Training: Transfer learning with ImageNet weights
+---
 
-### Damage Detection Model
-- Architecture: YOLO-based
-- Dataset: Heritage Structure Damage Dataset
-- Training: Custom training on damage annotations
+## 📊 Model Performance Overview
 
-### Material Analysis Model
-- Architecture: CNN
-- Dataset: Heritage Material Dataset
-- Training: Transfer learning with ResNet backbone
+| Component            | Metric                  | Value |
+| -------------------- | ----------------------- | ----- |
+| Monument Recognition | Accuracy                | \~95% |
+| Damage Detection     | mAP (YOLO)              | \~85% |
+| Material Analysis    | Classification Accuracy | \~90% |
 
-## 📊 Performance Metrics
+---
 
-- Monument Recognition: 92% accuracy
-- Damage Detection: 85% mAP
-- Material Analysis: 88% accuracy
+## 🔧 Model Details
+
+### Monument Recognition
+
+* **Architecture:** Custom CNN
+* **Training:** Fine-tuned with Indian heritage datasets
+
+### Damage Detection
+
+* **Architecture:** YOLO-based object detector
+* **Data:** Manually annotated heritage damage images
+
+### Material Analysis
+
+* **Architecture:** ResNet-based CNN
+* **Data:** Labeled construction material samples from monuments
+
+---
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+We welcome contributions!
 
-## 📝 License
+1. Fork the repo
+2. Create a feature branch: `git checkout -b feature/YourFeature`
+3. Commit your changes: `git commit -m "Add YourFeature"`
+4. Push and open a PR: `git push origin feature/YourFeature`
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Indian Heritage Conservation Society
-- Archaeological Survey of India
-- Open Source Computer Vision Community
-- Streamlit Team
+---
 
 ## 📧 Contact
 
-For questions and support, please open an issue in the GitHub repository or contact the maintainers.
+For questions, issues, or access to datasets and models, reach out to the maintainer:
+
+**Satvik Mishra**
+📧 Email: `satvikmishrayt19@gmail.com`
+
+---
+
+## 📝 Important Notes
+
+If cloning or setup fails, contact the maintainer for:
+
+* Model files (e.g., `monument_recognition_model.h5`, `damage_detection_model.h5`)
+* Complete project folder
+* Dataset access
+* Technical support
+
+We aim to ensure a smooth setup and a high-impact use of ItihāsaLens for heritage conservation.
